@@ -25,8 +25,8 @@ export class CategoriesService {
     const newCategory = {
       id: this.categories.length + 1,
       category: category.category,
-      id_type: category.idType,
-      type: category.idType === 1 ? 'expense' : 'income'
+      id_type: category.id_type,
+      type: category.id_type === 1 ? 'expense' : 'income'
     }
 
     this.categories.push(newCategory);

@@ -8,5 +8,5 @@ export class CreateCategoryDto {
     
     @IsNumber({ maxDecimalPlaces: 0}, { message: 'El idType debe ser un número entero.'})
     @IsNotEmpty({ message: 'El idType no debe estar vacío.'})
-    idType: number
+    id_type: number
 }
