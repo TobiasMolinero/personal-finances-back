@@ -3,7 +3,7 @@ import { CreateAccountDto } from './dto/create-account';
 import { Controller, Get, Param, Post, Body, Patch, ParseIntPipe } from '@nestjs/common';
 import { UpdateAccountDto } from './dto/update-account';
 
-@Controller('/accounts')
+@Controller('accounts')
 export class AccountsController {
     
     constructor(private readonly accountsService: AccountsService) {}
@@ -13,7 +13,7 @@ export class AccountsController {
         return this.accountsService.getAll();
     }
 
-    @Get('/:id')
+    @Get(':id')
     getOne(@Param('id', ParseIntPipe) id: number) {
         return this.accountsService.getOne(id);
     }
@@ -23,7 +23,7 @@ export class AccountsController {
         return this.accountsService.create(account);
     }
 
-    @Patch('/:id')
+    @Patch(':id')
     edit(@Param('id', ParseIntPipe) id: number, @Body() account: UpdateAccountDto) {
         return this.accountsService.edit(id, {...account});
     }

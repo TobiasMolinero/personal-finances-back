@@ -36,7 +36,7 @@ export class AccountsService {
     edit(id: number, account: UpdateAccountDto) {
         const accountIndex = this.accounts.findIndex(account => account.id === id);
 
-        if(accountIndex === -1) return null;
+        if(accountIndex === -1) return 'No se encontro la cuenta';
 
         if(account.name) this.accounts[accountIndex].name = account.name;
 
